@@ -1,3 +1,24 @@
+* [React-Hooks](https://en.reactjs.org/docs/hooks-intro.html) - Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+
+* [Jest](https://jestjs.io/) - Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+
+* [React documentation](https://reactjs.org/) - to learn React.
+
+* [Material UI](https://material-ui.com/) - React components for faster and easier web development. Build your own design system, or start with Material Design.
+
+### Prerequisites
+* Node v12.11.0
+* NPM 6.11.3
+
+### Installing
+* Clone or download repo.
+* Run npm i.
+* Run npm run dev.
+
+### Author
+
+* **Christian Alejandro Herrejon Villa** - *Full Stack Developer* - [Apex Systems](https://www.intersysconsulting.com/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
