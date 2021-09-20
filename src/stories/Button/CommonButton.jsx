@@ -1,7 +1,5 @@
-/* eslint-disable react/button-has-type */
-
 import React from 'react';
-import { Button } from '@material-ui/core';
+import Button from '@mui/material/Button';
 
 // Button Component
 const CommonButton = () => (<Button variant="contained" color="primary">Hello World</Button>);
