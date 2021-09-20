@@ -2,20 +2,14 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import CommonButton from './CommonButton';
 
-describe("CommonButton", () => {
-    const props = {
-        variant: 'contained',
-        color: 'primary',
-        text: 'Hello World',
-    };
-
+describe('CommonButton', () => {
     it('should render', () => {
-        render(<CommonButton></CommonButton>);
+        render(<CommonButton />);
     });
 
     it('should render a button', () => {
-        const component = render(<CommonButton></CommonButton>);
+        const component = render(<CommonButton />);
         const button = component.baseElement.querySelector('button');
         expect(button).toBeDefined();
     });
-})
+});
