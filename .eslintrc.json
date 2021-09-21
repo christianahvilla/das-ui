@@ -62,7 +62,17 @@
         "camelcase": "off",
 
          //should add ".ts" if typescript project
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+
+        "linebreak-style": ["error", "windows"],
+
+        "no-unused-vars": [
+            "error",
+            { 
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_"
+            }
+        ]
     },
     "ignorePatterns": ["!**/*", ".storybook/*", "./src/**/*.@(js|jsx|ts|tsx)"]
 }
