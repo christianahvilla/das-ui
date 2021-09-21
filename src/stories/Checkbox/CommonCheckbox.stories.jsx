@@ -16,6 +16,8 @@ const Wrapper = () => {
             checked={boolean('Checked', false) || isChecked}
             disabled={boolean('Disabled', false)}
             handleChange={handleChecked}
+            id={text('Id', 'checkbox')}
+            indeterminate={boolean('Indeterminate', false)}
             label={text('Label', 'Checkbox')}
         />
     );

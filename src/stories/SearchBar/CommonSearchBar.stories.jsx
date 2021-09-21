@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 import CommonSearchBar from './CommonSearchBar';
-import INPUT_CONTENT from '../../helpers/Constants';
+import { INPUT_CONTENT } from '../../helpers/constants';
 
 const Wrapper = () => {
     const handleChangeValue = (event) => {
