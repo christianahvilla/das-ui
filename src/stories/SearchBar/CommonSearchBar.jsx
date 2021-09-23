@@ -1,8 +1,8 @@
 import React from 'react';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
-import SearchIcon from '@mui/icons-material/Search';
 import { func, string } from 'prop-types';
+import CommonIcon from '../Icon/CommonIcon';
 
 const CommonSearchBar = (props) => {
     const {
@@ -20,7 +20,7 @@ const CommonSearchBar = (props) => {
             InputProps={{
                 startAdornment: (
                     <InputAdornment position={position}>
-                        <SearchIcon />
+                        <CommonIcon kind="search" />
                     </InputAdornment>
                 ),
             }}

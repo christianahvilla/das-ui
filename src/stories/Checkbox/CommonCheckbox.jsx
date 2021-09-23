@@ -7,6 +7,8 @@ const CommonCheckbox = (props) => {
         checked,
         disabled,
         handleChange,
+        id,
+        indeterminate,
         label,
     } = props;
 
@@ -18,6 +20,8 @@ const CommonCheckbox = (props) => {
                     checked={checked}
                     disabled={disabled}
                     onChange={handleChange}
+                    id={id}
+                    indeterminate={indeterminate}
                 />
             )}
         />
@@ -28,6 +32,7 @@ CommonCheckbox.defaultProps = {
     checked: false,
     disabled: false,
     handleChange: () => {},
+    indeterminate: false,
     label: 'Checkbox Demo',
 };
 
@@ -35,6 +40,8 @@ CommonCheckbox.propTypes = {
     checked: bool,
     disabled: bool,
     handleChange: func,
+    id: string.isRequired,
+    indeterminate: bool,
     label: string,
 };
 
