@@ -64,8 +64,6 @@
          //should add ".ts" if typescript project
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 
-        "linebreak-style": ["error", "windows"],
-
         "no-unused-vars": [
             "error",
             { 

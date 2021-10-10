@@ -49,7 +49,7 @@ const CommonTable = (props) => {
             <DataGrid
                 rows={rows}
                 columns={columnActions}
-                localeText={esES.props.MuiDataGrid.localeText}
+                localeText={esES.components.MuiDataGrid.defaultProps.localeText}
                 rowsPerPageOptions={rowsPerPageOptions}
                 onPageSizeChange={onPageSizeChange}
                 pageSize={pageSize}
