@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 /* eslint-disable import/prefer-default-export */
 export const TABLE_COLUMNS = [
     {
@@ -145,4 +147,76 @@ export const INPUT_CONTENT = [
     { content: 'Herrejon' },
     { content: 'Villa' },
     { content: 'alias el chorizoman' },
+];
+
+export const EVENT = [
+    {
+        title: 'Festival in HH',
+        start: moment().add(1, 'days').format(),
+        end: moment().add(4, 'days').add(3, 'hours').format(),
+        className: 'festival',
+        color: 'orange',
+        textColor: 'black',
+        kind: 'festival',
+        state: 'hh',
+    },
+    {
+        title: 'Party in HH',
+        start: moment().subtract(2, 'days').format(),
+        end: moment().subtract(2, 'days').add(3, 'hours').format(),
+        color: 'brightblue',
+        textColor: 'white',
+        kind: 'party',
+        state: 'hh',
+    },
+    {
+        title: 'Party in SH',
+        start: moment().format(),
+        end: moment().add(3, 'hours').format(),
+        color: 'brightblue',
+        textColor: 'white',
+        kind: 'party',
+        state: 'sh',
+    },
+    {
+        title: 'Concert in SH',
+        start: moment().add(1, 'days').format(),
+        end: moment().add(1, 'days').add(3, 'hours').format(),
+        color: 'red',
+        textColor: 'white',
+        kind: 'concert',
+        state: 'sh',
+    },
+    {
+        title: 'Concert in HH',
+        start: moment().subtract(3, 'days').format(),
+        end: moment().subtract(3, 'days').add(3, 'hours').format(),
+        color: 'red',
+        textColor: 'white',
+        kind: 'concert',
+        state: 'hh',
+    },
+    {
+        title: '#1 Background title',
+        start: moment().subtract(6, 'days').format('YYYY-MM-DD'),
+        end: moment().subtract(2, 'days').format('YYYY-MM-DD'),
+        display: 'background',
+        kind: 'holiday',
+    },
+    {
+        title: '#2 title',
+        start: moment().subtract(8, 'days').format('YYYY-MM-DD'),
+        end: moment().subtract(8, 'days').format('YYYY-MM-DD'),
+        display: 'background',
+        color: '#ff9f89',
+        kind: 'holiday',
+    },
+    {
+        // FIX: Two Background events overlap each other
+        title: '#3 Overlap',
+        start: moment().subtract(8, 'days').format('YYYY-MM-DD'),
+        end: moment().subtract(8, 'days').format('YYYY-MM-DD'),
+        display: 'background',
+        kind: 'holiday',
+    },
 ];
