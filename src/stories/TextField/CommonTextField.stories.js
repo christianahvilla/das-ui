@@ -4,17 +4,14 @@ import { text } from '@storybook/addon-knobs';
 import CommonTextField from './CommonTextField';
 
 const Wrapper = () => {
-    const handleChangeValue = (event) => {
-        const { target: { value } } = event;
+    const handleChangeValue = (value) => {
         // eslint-disable-next-line no-console
         console.log(value);
     };
 
     return (
         <CommonTextField
-            id={text('Id', 'outlined-basic')}
-            label={text('Label', 'Nombre')}
-            variant={text('Variant', 'outlined')}
+            placeholder={text('Placeholder', 'Default Input Value')}
             handleChange={handleChangeValue}
         />
     );

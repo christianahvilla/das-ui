@@ -1,26 +1,32 @@
 import * as React from 'react';
-import MuiAlert from '@mui/material/Alert';
-import { string } from 'prop-types';
+import Message from 'rsuite/Message';
+import { bool, string } from 'prop-types';
 
 const CommonAlert = (props) => {
     const {
-        severity,
+        header,
         msg,
+        showIcon,
+        type,
     } = props;
 
     return (
-        <MuiAlert severity={severity}>{msg}</MuiAlert>
+        <Message showIcon={showIcon} type={type} header={header}>{msg}</Message>
     );
 };
 
 CommonAlert.defaultProps = {
-    severity: 'info',
+    header: 'Informational',
     msg: 'Default Message for Alert',
+    showIcon: true,
+    type: 'info',
 };
 
 CommonAlert.propTypes = {
-    severity: string,
+    header: string,
     msg: string,
+    showIcon: bool,
+    type: string,
 };
 
 export default CommonAlert;
