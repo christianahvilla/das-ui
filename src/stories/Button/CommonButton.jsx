@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '@mui/material/Button';
+import Button from 'rsuite/Button';
 
 // Button Component
-const CommonButton = () => (<Button variant="contained" color="primary">Hello World</Button>);
+const CommonButton = () => (<Button color="red" appearance="primary">Hello World</Button>);
 
 export default CommonButton;

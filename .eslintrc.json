@@ -61,6 +61,8 @@
 
         "camelcase": "off",
 
+        "linebreak-style": ["error", "windows"],
+
          //should add ".ts" if typescript project
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 

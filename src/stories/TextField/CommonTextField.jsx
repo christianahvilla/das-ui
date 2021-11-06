@@ -1,20 +1,16 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
+import Input from 'rsuite/Input';
 import { func, string } from 'prop-types';
 
 const CommonTextField = (props) => {
     const {
         handleChange,
-        id,
-        label,
-        variant,
+        placeholder,
     } = props;
 
     return (
-        <TextField
-            id={id}
-            label={label}
-            variant={variant}
+        <Input
+            placeholder={placeholder}
             onChange={handleChange}
         />
     );
@@ -22,16 +18,12 @@ const CommonTextField = (props) => {
 
 CommonTextField.defaultProps = {
     handleChange: () => {},
-    id: 'input-with-icon-textfield',
-    label: 'Search',
-    variant: 'outlined',
+    placeholder: 'Default Input',
 };
 
 CommonTextField.propTypes = {
     handleChange: func,
-    id: string,
-    label: string,
-    variant: string,
+    placeholder: string,
 };
 
 export default CommonTextField;
