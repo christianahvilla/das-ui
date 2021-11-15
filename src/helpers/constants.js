@@ -230,3 +230,36 @@ export const EVENT = [
         kind: 'holiday',
     },
 ];
+
+export const Buttons = [
+    {
+        key: 1,
+        appearance: 'primary',
+        color: 'blue',
+        text: 'Prev',
+        // eslint-disable-next-line no-console
+        onClick: () => { console.log('prev'); },
+        disabled: false,
+        loading: false,
+    },
+    {
+        key: 2,
+        appearance: 'primary',
+        color: 'blue',
+        text: 'Now',
+        // eslint-disable-next-line no-console
+        onClick: () => { console.log('now'); },
+        disabled: false,
+        loading: false,
+    },
+    {
+        key: 3,
+        appearance: 'primary',
+        color: 'blue',
+        text: 'Next',
+        // eslint-disable-next-line no-console
+        onClick: () => { console.log('next'); },
+        disabled: false,
+        loading: false,
+    },
+];
