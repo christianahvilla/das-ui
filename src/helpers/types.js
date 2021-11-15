@@ -1,3 +1,5 @@
+import * as dateFns from 'date-fns';
+
 export const PROGRESS_SPEEDS = [
     'fast',
     'normal',
@@ -43,10 +45,41 @@ export const COLOR_COMPONENTS = [
     'blue',
     'violet',
 ];
+
 export const TYPE_COMPONENTS = [
     'default',
     'primary',
     'link',
     'subtle',
     'ghost',
+];
+
+export const FORMAT_DATES = [
+    'yyyy-MM',
+    'HH:mm',
+    'HH:mm.ss',
+    'yyyy-MM-dd HH:mm',
+    'yyyy-MM-dd',
+    'yyyy-MM',
+    'dd MMM yyyy hh:mm:ss aa',
+    'dd MMM yyyy hh:mm',
+    'hh:mm:ss aa',
+];
+
+export const FORMAT_RANGES = [
+    {
+        label: 'Ahora',
+        value: new Date(),
+        closeOverlay: false,
+    },
+    {
+        label: 'Hoy',
+        value: new Date(),
+        closeOverlay: true,
+    },
+    {
+        label: 'Ayer',
+        value: dateFns.addDays(new Date(), -1),
+        closeOverlay: true,
+    },
 ];
