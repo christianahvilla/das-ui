@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Button } from 'rsuite';
 import { text } from '@storybook/addon-knobs';
 import CommonDrawer from './CommonDrawer';
+import CommonButton from '../Button/CommonButton';
+import avatarFile from '../../assets/avatar.png';
 
 const Wrapper = () => {
     const [activeKey, setActiveKey] = useState('1');
@@ -10,7 +11,7 @@ const Wrapper = () => {
 
     return (
         <>
-            <Button onClick={() => setExpanded(!expanded)}>Open</Button>
+            <CommonButton onClick={() => setExpanded(!expanded)} text="Open" />
             <div style={{ width: 240 }}>
                 <CommonDrawer
                     expanded={expanded}
@@ -19,7 +20,7 @@ const Wrapper = () => {
                     defaultOpenKeys={['1', '2', '3']}
                     name={text('Name', 'Nayeli Solorzano')}
                     type={text('User Type', 'Admin')}
-                    imageSrc={text('Image', '../../assets/avatar.png')}
+                    imageSrc={text('Image', avatarFile)}
                 />
             </div>
         </>
