@@ -4,7 +4,7 @@ export const PROGRESS_SPEEDS = [
     'slow',
 ];
 
-export const PROGRESS_SIZES = [
+export const COMPONENTS_SIZES = [
     'xs',
     'sm',
     'md',
@@ -32,4 +32,21 @@ export const CHIP_TYPES = [
     'secondary',
     'success',
     'warning',
+];
+
+export const COLOR_COMPONENTS = [
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'cyan',
+    'blue',
+    'violet',
+];
+export const TYPE_COMPONENTS = [
+    'default',
+    'primary',
+    'link',
+    'subtle',
+    'ghost',
 ];
