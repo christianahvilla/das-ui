@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    arrayOf, bool, func, shape, string,
+    arrayOf, bool, func, shape, string, number,
 } from 'prop-types';
 import { InputPicker } from 'rsuite';
 
@@ -14,7 +14,7 @@ const CommonInputPicker = (props) => {
         onChange,
         plaintext,
         readOnly,
-        // selectWidth,
+        selectWidth,
         size,
     } = props;
 
@@ -29,6 +29,7 @@ const CommonInputPicker = (props) => {
             plaintext={plaintext}
             readOnly={readOnly}
             size={size}
+            style={block ? null : { width: selectWidth }}
         />
     );
 };
@@ -42,7 +43,7 @@ CommonInputPicker.defaultProps = {
     onChange: () => {},
     plaintext: false,
     readOnly: false,
-    // selectWidth: 224,
+    selectWidth: 224,
     size: '',
 };
 
@@ -55,7 +56,7 @@ CommonInputPicker.propTypes = {
     onChange: func,
     plaintext: bool,
     readOnly: bool,
-    // selectWidth: number,
+    selectWidth: number,
     size: string,
 };
 
