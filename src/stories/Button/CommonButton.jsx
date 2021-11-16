@@ -20,8 +20,8 @@ const CommonButton = (props) => {
 };
 
 CommonButton.defaultProps = {
-    appearance: '',
-    color: '',
+    appearance: 'default',
+    color: 'red',
     disabled: false,
     key: '',
     loading: false,
