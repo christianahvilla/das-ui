@@ -1,5 +1,5 @@
 import {
-    arrayOf, bool, shape, string,
+    arrayOf, shape, string,
 } from 'prop-types';
 import React from 'react';
 import { ButtonToolbar } from 'rsuite';
@@ -7,11 +7,8 @@ import CommonButton from '../Button/CommonButton';
 
 const CommonButtonToolBar = (props) => {
     const {
-        block,
         buttons,
-        justified,
         size,
-        vertical,
     } = props;
 
     const getButtons = buttons.map((button) => {
@@ -40,10 +37,7 @@ const CommonButtonToolBar = (props) => {
 
     return (
         <ButtonToolbar
-            block={block}
-            justified={justified}
             size={size}
-            vertical={vertical}
         >
             {getButtons}
         </ButtonToolbar>
@@ -51,18 +45,12 @@ const CommonButtonToolBar = (props) => {
 };
 
 CommonButtonToolBar.defaultProps = {
-    block: false,
-    justified: false,
     size: '',
-    vertical: false,
 };
 
 CommonButtonToolBar.propTypes = {
-    block: bool,
     buttons: arrayOf(shape({})).isRequired,
-    justified: bool,
     size: string,
-    vertical: bool,
 };
 
 export default CommonButtonToolBar;

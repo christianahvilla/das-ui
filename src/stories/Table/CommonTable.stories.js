@@ -69,8 +69,8 @@ const Wrapper = () => {
             data={filteredData}
             realData={MOCK_DATA}
             handleChangeLimit={handleChangeLimit}
-            handleDelete={handleAction}
-            handleEdit={handleAction}
+            handledelete={handleAction}
+            handleedit={handleAction}
             headerHeight={number('Header Height', 55)}
             hover={boolean('Hover', true)}
             labelAction={text('Label Action', 'Aciones')}
