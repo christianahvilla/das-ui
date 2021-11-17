@@ -10,18 +10,18 @@ import {
 const TableActions = (props) => {
     const {
         dataKey,
-        handleEdit,
-        handleDelete,
+        handleedit,
+        handledelete,
         rowData,
     } = props;
 
     const newProps = { ...props };
-    delete newProps[handleEdit];
-    delete newProps[handleDelete];
+    delete newProps[handleedit];
+    delete newProps[handledelete];
 
-    const onDelete = () => handleDelete(rowData[dataKey]);
+    const onDelete = () => handledelete(rowData[dataKey]);
 
-    const onEdit = () => handleEdit(rowData[dataKey]);
+    const onEdit = () => handleedit(rowData[dataKey]);
 
     return (
         <Cell {...newProps} style={{ paddingTop: 5, paddingBottom: 5 }}>
@@ -37,15 +37,15 @@ TableActions.propTypes = {
 
 TableActions.propTypes = {
     dataKey: string.isRequired,
-    handleEdit: func,
-    handleDelete: func,
+    handleedit: func,
+    handledelete: func,
     // eslint-disable-next-line react/require-default-props
     rowData: shape({}),
 };
 
 TableActions.defaultProps = {
-    handleEdit: () => {},
-    handleDelete: () => {},
+    handleedit: () => {},
+    handledelete: () => {},
 };
 
 export default TableActions;

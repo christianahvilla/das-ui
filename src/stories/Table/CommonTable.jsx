@@ -15,8 +15,8 @@ const CommonTable = (props) => {
         columns,
         data,
         handleChangeLimit,
-        handleDelete,
-        handleEdit,
+        handledelete,
+        handleedit,
         headerHeight,
         hover,
         labelAction,
@@ -62,7 +62,7 @@ const CommonTable = (props) => {
                 {TableHeader}
                 <Column>
                     <HeaderCell>{labelAction}</HeaderCell>
-                    <TableActions dataKey="id" handleDelete={handleDelete} handleEdit={handleEdit} />
+                    <TableActions dataKey="id" handledelete={handledelete} handleedit={handleedit} />
                 </Column>
             </Table>
             {pagination && (
@@ -92,8 +92,8 @@ CommonTable.defaultProps = {
     cellBordered: false,
     data: [],
     handleChangeLimit: () => {},
-    handleDelete: () => {},
-    handleEdit: () => {},
+    handledelete: () => {},
+    handleedit: () => {},
     headerHeight: 60,
     hover: true,
     labelAction: 'Acciones',
@@ -116,8 +116,8 @@ CommonTable.propTypes = {
     columns: arrayOf(shape({})).isRequired,
     data: arrayOf(shape({})),
     handleChangeLimit: func,
-    handleDelete: func,
-    handleEdit: func,
+    handledelete: func,
+    handleedit: func,
     headerHeight: number,
     hover: bool,
     labelAction: string,

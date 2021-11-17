@@ -13,6 +13,17 @@ export const COMPONENTS_SIZES = [
     'lg',
 ];
 
+export const BACKDROP_DIALOG = [
+    'static',
+    true,
+    false,
+];
+
+export const ROLE_DIALOG = [
+    'alertdialog',
+    null,
+];
+
 export const ALERT_TYPES = [
     'info',
     'success',
