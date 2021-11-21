@@ -231,7 +231,7 @@ export const EVENT = [
     },
 ];
 
-export const Buttons = [
+export const BUTTONS = [
     {
         key: 1,
         appearance: 'primary',
@@ -263,6 +263,37 @@ export const Buttons = [
         loading: false,
     },
 ];
+
+export const NOTIFICATIONS = {
+    info: {
+        closable: true,
+        showIcon: true,
+        type: 'info',
+        header: 'This is a message info',
+        msg: 'Message body',
+    },
+    success: {
+        closable: true,
+        showIcon: true,
+        type: 'success',
+        header: 'This is a message success',
+        msg: 'Message body',
+    },
+    warning: {
+        closable: true,
+        showIcon: true,
+        type: 'warning',
+        header: 'This is a message warning',
+        msg: 'Message body',
+    },
+    error: {
+        closable: true,
+        showIcon: true,
+        type: 'error',
+        header: 'This is a message error',
+        msg: 'Message body',
+    },
+};
 
 export const FAKE_DATA_SELECT = [
     {
@@ -335,4 +366,49 @@ export const FAKE_DATA_SELECT = [
         value: 'Rogelio',
         role: 'Guest',
     },
+];
+
+export const PLACE_NOTIFICATION = [
+    { label: 'topStart', value: 'topStart' },
+    { label: 'topCenter', value: 'topCenter' },
+    { label: 'topEnd', value: 'topEnd' },
+    { label: 'bottomStart', value: 'bottomStart' },
+    { label: 'bottomCenter', value: 'bottomCenter' },
+    { label: 'bottomEnd', value: 'bottomEnd' },
+];
+
+export const TYPE_NOTIFICATION = [
+    { label: 'info', value: 'info' },
+    { label: 'success', value: 'success' },
+    { label: 'warning', value: 'warning' },
+    { label: 'error', value: 'error' },
+];
+
+export const WHISPER_PLACEMENT = [
+    'top',
+    'bottom',
+    'right',
+    'left',
+    'bottomStart',
+    'bottomEnd',
+    'topStart',
+    'topEnd',
+    'leftStart',
+    'leftEnd',
+    'rightStart',
+    'rightEnd',
+    'auto',
+    'autoVerticalStart',
+    'autoVerticalEnd',
+    'autoHorizontalStart',
+    'autoHorizontalEnd',
+];
+
+export const WHISPER_TRIGGER = [
+    'click',
+    'contextMenu',
+    'hover',
+    'focus',
+    'active',
+    'none',
 ];
