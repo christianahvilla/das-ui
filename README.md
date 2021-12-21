@@ -4,6 +4,8 @@ DAS-UI is a componentes library built with R-SuitJS.
 ### Built with
 * [React Suite](https://rsuitejs.com/) - A suite of React components, sensible UI design, and a friendly development experience.
 
+* [APEXCHARTS.JS](https://apexcharts.com/) - Modern & Interactive Open-source Charts.
+
 * [FullCalendar](https://fullcalendar.io/) - A JavaScript Calendar.
 
 * [React](https://reactjs.org/) -A JavaScript library for building user interfaces.
