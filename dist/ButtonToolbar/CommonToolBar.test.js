@@ -13,13 +13,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 describe('CommonButtonToolBar', function () {
   it('should render', function () {
     (0, _react2.render)( /*#__PURE__*/_react.default.createElement(_CommonButtonToolBar.default, {
-      buttons: _constants.Buttons,
+      buttons: _constants.BUTTONS,
       size: "sm"
     }));
   });
   it('should render a button toolbar', function () {
     var component = (0, _react2.render)( /*#__PURE__*/_react.default.createElement(_CommonButtonToolBar.default, {
-      buttons: _constants.Buttons,
+      buttons: _constants.BUTTONS,
       size: "sm"
     }));
     var buttonGroup = component.baseElement.querySelector('Button Toolbar');
