@@ -19,7 +19,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var CommonAlert = function CommonAlert(props) {
+var CommonChart = function CommonChart(props) {
   var height = props.height,
       options = props.options,
       series = props.series,
@@ -34,18 +34,18 @@ var CommonAlert = function CommonAlert(props) {
   });
 };
 
-CommonAlert.defaultProps = {
+CommonChart.defaultProps = {
   height: 350,
   series: [],
   type: 'bar',
   width: 500
 };
-CommonAlert.propTypes = {
+CommonChart.propTypes = {
   height: _propTypes.number,
   options: (0, _propTypes.shape)({}).isRequired,
   series: (0, _propTypes.arrayOf)((0, _propTypes.shape)({})),
   type: _propTypes.string,
   width: _propTypes.number
 };
-var _default = CommonAlert;
+var _default = CommonChart;
 exports.default = _default;

@@ -4,7 +4,7 @@ import {
 } from 'prop-types';
 import Chart from 'react-apexcharts';
 
-const CommonAlert = (props) => {
+const CommonChart = (props) => {
     const {
         height,
         options,
@@ -18,14 +18,14 @@ const CommonAlert = (props) => {
     );
 };
 
-CommonAlert.defaultProps = {
+CommonChart.defaultProps = {
     height: 350,
     series: [],
     type: 'bar',
     width: 500,
 };
 
-CommonAlert.propTypes = {
+CommonChart.propTypes = {
     height: number,
     options: shape({}).isRequired,
     series: arrayOf(shape({})),
@@ -33,4 +33,4 @@ CommonAlert.propTypes = {
     width: number,
 };
 
-export default CommonAlert;
+export default CommonChart;
