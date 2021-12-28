@@ -35,12 +35,12 @@ CommonAlert.defaultProps = {
 CommonAlert.propTypes = {
     closable: bool,
     duration: number,
-    header: string,
-    key: string,
-    msg: string,
+    header: string || null,
+    key: string || null,
+    msg: string || null,
     onClose: func,
     showIcon: bool,
-    type: string,
+    type: string || null,
 };
 
 export default CommonAlert;
