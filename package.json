@@ -1,6 +1,6 @@
 {
   "name": "das-ui",
-  "version": "1.4",
+  "version": "1.4.0",
   "private": false,
   "files": [
     "dist",
