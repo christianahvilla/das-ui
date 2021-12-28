@@ -20,11 +20,19 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var CommonAlert = function CommonAlert(props) {
-  var header = props.header,
+  var closable = props.closable,
+      duration = props.duration,
+      header = props.header,
+      key = props.key,
       msg = props.msg,
+      onClose = props.onClose,
       showIcon = props.showIcon,
       type = props.type;
   return /*#__PURE__*/React.createElement(_Message.default, {
+    duration: duration,
+    key: key,
+    onClose: onClose,
+    closable: closable,
     showIcon: showIcon,
     type: type,
     header: header
@@ -32,14 +40,22 @@ var CommonAlert = function CommonAlert(props) {
 };
 
 CommonAlert.defaultProps = {
+  closable: true,
+  duration: 2000,
   header: 'Informational',
+  key: '',
   msg: 'Default Message for Alert',
+  onClose: null,
   showIcon: true,
   type: 'info'
 };
 CommonAlert.propTypes = {
+  closable: _propTypes.bool,
+  duration: _propTypes.number,
   header: _propTypes.string,
+  key: _propTypes.string,
   msg: _propTypes.string,
+  onClose: _propTypes.func,
   showIcon: _propTypes.bool,
   type: _propTypes.string
 };
