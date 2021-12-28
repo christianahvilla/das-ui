@@ -52,12 +52,12 @@ CommonAlert.defaultProps = {
 CommonAlert.propTypes = {
   closable: _propTypes.bool,
   duration: _propTypes.number,
-  header: _propTypes.string,
-  key: _propTypes.string,
-  msg: _propTypes.string,
+  header: _propTypes.string || null,
+  key: _propTypes.string || null,
+  msg: _propTypes.string || null,
   onClose: _propTypes.func,
   showIcon: _propTypes.bool,
-  type: _propTypes.string
+  type: _propTypes.string || null
 };
 var _default = CommonAlert;
 exports.default = _default;
