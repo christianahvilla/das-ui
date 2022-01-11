@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
 import React from 'react';
 import {
-    Sidenav, Nav, Dropdown,
+    Sidenav, Nav, Dropdown, Sidebar,
 } from 'rsuite';
 import CalendarIcon from '@rsuite/icons/Calendar';
 import PeoplesIcon from '@rsuite/icons/Peoples';
@@ -15,6 +16,7 @@ import {
     arrayOf, bool, func, string,
 } from 'prop-types';
 import DrawerHeader from './Components/DrawerHeader';
+import DrawerFooter from './Components/DrawerFooter';
 
 const panelStyles = {
     padding: '15px 20px',
@@ -45,66 +47,73 @@ const CommonDrawer = (props) => {
         setActiveKey,
         type,
         imageSrc,
+        onChange,
     } = props;
 
     return (
-        <Sidenav
-            expanded={expanded}
-            defaultOpenKeys={defaultOpenKeys}
-            appearance="subtle"
+        <Sidebar
+            collapsible
+            width={expanded ? 260 : 56}
             style={drawerStyle}
         >
-            <Sidenav.Body>
-                <DrawerHeader imageSrc={imageSrc} name={name} type={type} expanded={expanded} />
-                <Nav
-                    activeKey={activeKey}
-                    onSelect={setActiveKey}
-                >
-                    {expanded && (
-                        <Dropdown.Item panel style={panelStyles}>
-                            General
-                        </Dropdown.Item>
-                    ) }
-                    <Nav.Item eventKey="/home" style={{ ...navItemStyle, ...(activeKey === '/home' ? activeStyle : null) }} icon={<DashboardIcon />}>
-                        Inicio
-                    </Nav.Item>
-                    <Nav.Item eventKey="/agenda" style={{ ...navItemStyle, ...(activeKey === '/agenda' ? activeStyle : null) }} icon={<CalendarIcon />}>
-                        Agenda
-                    </Nav.Item>
-                    {expanded && (
-                        <Dropdown.Item panel style={panelStyles}>
-                            Consultorio
-                        </Dropdown.Item>
-                    ) }
-                    <Nav.Item eventKey="/patiens" style={{ ...navItemStyle, ...(activeKey === '/patiens' ? activeStyle : null) }} icon={<PeoplesIcon />}>
-                        Pacientes
-                    </Nav.Item>
-                    <Nav.Item eventKey="/treatments" style={{ ...navItemStyle, ...(activeKey === '/treatments' ? activeStyle : null) }} icon={<DocPassIcon />}>
-                        Tratamientos
-                    </Nav.Item>
-                    <Nav.Item eventKey="/recomendations" style={{ ...navItemStyle, ...(activeKey === '/recomendations' ? activeStyle : null) }} icon={<SpeakerIcon />}>
-                        Recomendaciones
-                    </Nav.Item>
-                    {expanded && (
-                        <Dropdown.Item panel style={panelStyles}>
-                            Administración
-                        </Dropdown.Item>
-                    ) }
-                    <Nav.Item eventKey="/inventory" style={{ ...navItemStyle, ...(activeKey === '/inventory' ? activeStyle : null) }} icon={<StorageIcon />}>
-                        Invnetario
-                    </Nav.Item>
-                    <Nav.Item eventKey="/trends" style={{ ...navItemStyle, ...(activeKey === '/trends' ? activeStyle : null) }} icon={<TrendIcon />}>
-                        Ingresos/Egresos
-                    </Nav.Item>
-                    <Nav.Item eventKey="/providers" style={{ ...navItemStyle, ...(activeKey === '/providers' ? activeStyle : null) }} icon={<OperatePeopleIcon />}>
-                        Proveedores
-                    </Nav.Item>
-                    <Nav.Item eventKey="/bills" style={{ ...navItemStyle, ...(activeKey === '/bills' ? activeStyle : null) }} icon={<ChangeListIcon />}>
-                        Recibos
-                    </Nav.Item>
-                </Nav>
-            </Sidenav.Body>
-        </Sidenav>
+            <Sidenav
+                expanded={expanded}
+                defaultOpenKeys={defaultOpenKeys}
+                appearance="subtle"
+            >
+                <Sidenav.Body>
+                    <DrawerHeader imageSrc={imageSrc} name={name} type={type} expanded={expanded} />
+                    <Nav
+                        activeKey={activeKey}
+                        onSelect={setActiveKey}
+                    >
+                        {expanded && (
+                            <Dropdown.Item panel style={panelStyles}>
+                                General
+                            </Dropdown.Item>
+                        ) }
+                        <Nav.Item eventKey="home" style={{ ...navItemStyle, ...(activeKey === 'home' ? activeStyle : null) }} icon={<DashboardIcon />}>
+                            Inicio
+                        </Nav.Item>
+                        <Nav.Item eventKey="agenda" style={{ ...navItemStyle, ...(activeKey === 'agenda' ? activeStyle : null) }} icon={<CalendarIcon />}>
+                            Agenda
+                        </Nav.Item>
+                        {expanded && (
+                            <Dropdown.Item panel style={panelStyles}>
+                                Consultorio
+                            </Dropdown.Item>
+                        ) }
+                        <Nav.Item eventKey="patiens" style={{ ...navItemStyle, ...(activeKey === 'patiens' ? activeStyle : null) }} icon={<PeoplesIcon />}>
+                            Pacientes
+                        </Nav.Item>
+                        <Nav.Item eventKey="treatments" style={{ ...navItemStyle, ...(activeKey === 'treatments' ? activeStyle : null) }} icon={<DocPassIcon />}>
+                            Tratamientos
+                        </Nav.Item>
+                        <Nav.Item eventKey="recomendations" style={{ ...navItemStyle, ...(activeKey === 'recomendations' ? activeStyle : null) }} icon={<SpeakerIcon />}>
+                            Recomendaciones
+                        </Nav.Item>
+                        {expanded && (
+                            <Dropdown.Item panel style={panelStyles}>
+                                Administración
+                            </Dropdown.Item>
+                        ) }
+                        <Nav.Item eventKey="inventory" style={{ ...navItemStyle, ...(activeKey === 'inventory' ? activeStyle : null) }} icon={<StorageIcon />}>
+                            Invnetario
+                        </Nav.Item>
+                        <Nav.Item eventKey="trends" style={{ ...navItemStyle, ...(activeKey === 'trends' ? activeStyle : null) }} icon={<TrendIcon />}>
+                            Ingresos/Egresos
+                        </Nav.Item>
+                        <Nav.Item eventKey="providers" style={{ ...navItemStyle, ...(activeKey === 'providers' ? activeStyle : null) }} icon={<OperatePeopleIcon />}>
+                            Proveedores
+                        </Nav.Item>
+                        <Nav.Item eventKey="bills" style={{ ...navItemStyle, ...(activeKey === 'bills' ? activeStyle : null) }} icon={<ChangeListIcon />}>
+                            Recibos
+                        </Nav.Item>
+                    </Nav>
+                </Sidenav.Body>
+            </Sidenav>
+            <DrawerFooter expanded={expanded} onChange={onChange} />
+        </Sidebar>
     );
 };
 
@@ -126,6 +135,7 @@ CommonDrawer.propTypes = {
     setActiveKey: func,
     type: string,
     imageSrc: string,
+    onChange: func.isRequired,
 };
 
 export default CommonDrawer;
