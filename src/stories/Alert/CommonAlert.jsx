@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Message from 'rsuite/Message';
 import {
-    bool, func, number, string,
+    bool, func, instanceOf, number, shape, string,
 } from 'prop-types';
 
 const CommonAlert = (props) => {
@@ -12,12 +12,13 @@ const CommonAlert = (props) => {
         key,
         msg,
         onClose,
+        ref,
         showIcon,
         type,
     } = props;
 
     return (
-        <Message duration={duration} key={key} onClose={onClose} closable={closable} showIcon={showIcon} type={type} header={header}>{msg}</Message>
+        <Message ref={ref} duration={duration} key={key} onClose={onClose} closable={closable} showIcon={showIcon} type={type} header={header}>{msg}</Message>
     );
 };
 
@@ -28,6 +29,7 @@ CommonAlert.defaultProps = {
     key: '',
     msg: 'Default Message for Alert',
     onClose: null,
+    ref: null,
     showIcon: true,
     type: 'info',
 };
@@ -39,6 +41,10 @@ CommonAlert.propTypes = {
     key: string || null,
     msg: string || null,
     onClose: func,
+    ref: [
+        func,
+        shape({ current: instanceOf(Element) }),
+    ],
     showIcon: bool,
     type: string || null,
 };

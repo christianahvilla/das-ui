@@ -26,9 +26,11 @@ var CommonAlert = function CommonAlert(props) {
       key = props.key,
       msg = props.msg,
       onClose = props.onClose,
+      ref = props.ref,
       showIcon = props.showIcon,
       type = props.type;
   return /*#__PURE__*/React.createElement(_Message.default, {
+    ref: ref,
     duration: duration,
     key: key,
     onClose: onClose,
@@ -46,6 +48,7 @@ CommonAlert.defaultProps = {
   key: '',
   msg: 'Default Message for Alert',
   onClose: null,
+  ref: null,
   showIcon: true,
   type: 'info'
 };
@@ -56,6 +59,9 @@ CommonAlert.propTypes = {
   key: _propTypes.string || null,
   msg: _propTypes.string || null,
   onClose: _propTypes.func,
+  ref: [_propTypes.func, (0, _propTypes.shape)({
+    current: (0, _propTypes.instanceOf)(Element)
+  })],
   showIcon: _propTypes.bool,
   type: _propTypes.string || null
 };
