@@ -6,12 +6,13 @@ import CommonButton from '../Button/CommonButton';
 import avatarFile from '../../assets/avatar.png';
 
 const Wrapper = () => {
-    const [activeKey, setActiveKey] = useState('1');
+    const [activeKey, setActiveKey] = useState('home');
     const [expanded, setExpanded] = useState(false);
+    const onChange = () => setExpanded(!expanded);
 
     return (
         <>
-            <CommonButton onClick={() => setExpanded(!expanded)} text="Open" />
+            <CommonButton onClick={onChange} text="Open" />
             <div style={{ width: 240 }}>
                 <CommonDrawer
                     expanded={expanded}
@@ -21,6 +22,7 @@ const Wrapper = () => {
                     name={text('Name', 'Nayeli Solorzano')}
                     type={text('User Type', 'Admin')}
                     imageSrc={text('Image', avatarFile)}
+                    onChange={onChange}
                 />
             </div>
         </>
