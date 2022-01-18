@@ -31,6 +31,8 @@ var _propTypes = require("prop-types");
 
 var _DrawerHeader = _interopRequireDefault(require("./Components/DrawerHeader"));
 
+var _DrawerFooter = _interopRequireDefault(require("./Components/DrawerFooter"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
@@ -63,12 +65,16 @@ var CommonDrawer = function CommonDrawer(props) {
       name = props.name,
       setActiveKey = props.setActiveKey,
       type = props.type,
-      imageSrc = props.imageSrc;
-  return /*#__PURE__*/_react.default.createElement(_rsuite.Sidenav, {
+      imageSrc = props.imageSrc,
+      onChange = props.onChange;
+  return /*#__PURE__*/_react.default.createElement(_rsuite.Sidebar, {
+    collapsible: true,
+    width: expanded ? 260 : 56,
+    style: drawerStyle
+  }, /*#__PURE__*/_react.default.createElement(_rsuite.Sidenav, {
     expanded: expanded,
     defaultOpenKeys: defaultOpenKeys,
-    appearance: "subtle",
-    style: drawerStyle
+    appearance: "subtle"
   }, /*#__PURE__*/_react.default.createElement(_rsuite.Sidenav.Body, null, /*#__PURE__*/_react.default.createElement(_DrawerHeader.default, {
     imageSrc: imageSrc,
     name: name,
@@ -81,48 +87,51 @@ var CommonDrawer = function CommonDrawer(props) {
     panel: true,
     style: panelStyles
   }, "General"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/home",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/home' ? activeStyle : null),
+    eventKey: "home",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'home' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_Dashboard.default, null)
   }, "Inicio"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/agenda",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/agenda' ? activeStyle : null),
+    eventKey: "agenda",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'agenda' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_Calendar.default, null)
   }, "Agenda"), expanded && /*#__PURE__*/_react.default.createElement(_rsuite.Dropdown.Item, {
     panel: true,
     style: panelStyles
   }, "Consultorio"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/patiens",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/patiens' ? activeStyle : null),
+    eventKey: "patiens",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'patiens' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_Peoples.default, null)
   }, "Pacientes"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/treatments",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/treatments' ? activeStyle : null),
+    eventKey: "treatments",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'treatments' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_DocPass.default, null)
   }, "Tratamientos"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/recomendations",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/recomendations' ? activeStyle : null),
+    eventKey: "recomendations",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'recomendations' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_Speaker.default, null)
   }, "Recomendaciones"), expanded && /*#__PURE__*/_react.default.createElement(_rsuite.Dropdown.Item, {
     panel: true,
     style: panelStyles
   }, "Administraci\xF3n"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/inventory",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/inventory' ? activeStyle : null),
+    eventKey: "inventory",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'inventory' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_Storage.default, null)
   }, "Invnetario"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/trends",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/trends' ? activeStyle : null),
+    eventKey: "trends",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'trends' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_Trend.default, null)
   }, "Ingresos/Egresos"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/providers",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/providers' ? activeStyle : null),
+    eventKey: "providers",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'providers' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_OperatePeople.default, null)
   }, "Proveedores"), /*#__PURE__*/_react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "/bills",
-    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === '/bills' ? activeStyle : null),
+    eventKey: "bills",
+    style: _objectSpread(_objectSpread({}, navItemStyle), activeKey === 'bills' ? activeStyle : null),
     icon: /*#__PURE__*/_react.default.createElement(_ChangeList.default, null)
-  }, "Recibos"))));
+  }, "Recibos")))), /*#__PURE__*/_react.default.createElement(_DrawerFooter.default, {
+    expanded: expanded,
+    onChange: onChange
+  }));
 };
 
 CommonDrawer.defaultProps = {
@@ -141,7 +150,8 @@ CommonDrawer.propTypes = {
   name: _propTypes.string,
   setActiveKey: _propTypes.func,
   type: _propTypes.string,
-  imageSrc: _propTypes.string
+  imageSrc: _propTypes.string,
+  onChange: _propTypes.func.isRequired
 };
 var _default = CommonDrawer;
 exports.default = _default;

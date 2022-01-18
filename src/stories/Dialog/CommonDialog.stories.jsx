@@ -39,7 +39,7 @@ const Wrapper = () => {
                 Footer={Footer}
                 full={boolean('Full', false)}
                 Header={Header}
-                keyoard={boolean('Keyboard', false)}
+                keyboard={boolean('Keyboard', false)}
                 onClose={handleOpen}
                 open={open}
                 overflow={boolean('Overflow', false)}

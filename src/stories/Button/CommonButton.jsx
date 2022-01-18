@@ -9,6 +9,7 @@ import Button from 'rsuite/Button';
 const CommonButton = (props) => {
     const {
         appearance,
+        className,
         color,
         disabled,
         key,
@@ -16,11 +17,12 @@ const CommonButton = (props) => {
         onClick,
         text,
     } = props;
-    return (<Button key={key} loading={loading} disabled={disabled} color={color} appearance={appearance} onClick={onClick}>{text}</Button>);
+    return (<Button className={className} key={key} loading={loading} disabled={disabled} color={color} appearance={appearance} onClick={onClick}>{text}</Button>);
 };
 
 CommonButton.defaultProps = {
     appearance: 'default',
+    className: '',
     color: 'red',
     disabled: false,
     key: '',
@@ -31,6 +33,7 @@ CommonButton.defaultProps = {
 
 CommonButton.propTypes = {
     appearance: string,
+    className: string,
     color: string,
     disabled: bool,
     key: string,

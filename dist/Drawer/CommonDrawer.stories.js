@@ -33,7 +33,7 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Wrapper = function Wrapper() {
-  var _useState = (0, _react.useState)('1'),
+  var _useState = (0, _react.useState)('home'),
       _useState2 = _slicedToArray(_useState, 2),
       activeKey = _useState2[0],
       setActiveKey = _useState2[1];
@@ -43,10 +43,12 @@ var Wrapper = function Wrapper() {
       expanded = _useState4[0],
       setExpanded = _useState4[1];
 
+  var onChange = function onChange() {
+    return setExpanded(!expanded);
+  };
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_CommonButton.default, {
-    onClick: function onClick() {
-      return setExpanded(!expanded);
-    },
+    onClick: onChange,
     text: "Open"
   }), /*#__PURE__*/_react.default.createElement("div", {
     style: {
@@ -59,7 +61,8 @@ var Wrapper = function Wrapper() {
     defaultOpenKeys: ['1', '2', '3'],
     name: (0, _addonKnobs.text)('Name', 'Nayeli Solorzano'),
     type: (0, _addonKnobs.text)('User Type', 'Admin'),
-    imageSrc: (0, _addonKnobs.text)('Image', _avatar.default)
+    imageSrc: (0, _addonKnobs.text)('Image', _avatar.default),
+    onChange: onChange
   })));
 };
 

@@ -9,10 +9,11 @@ const CommonDialog = (props) => {
     const {
         backdrop,
         Body,
+        ref,
         Footer,
         full,
         Header,
-        keyoard,
+        keyboard,
         onClose,
         open,
         overflow,
@@ -27,12 +28,13 @@ const CommonDialog = (props) => {
             Footer={Footer}
             full={full}
             Header={Header}
-            keyoard={keyoard}
+            keyboard={keyboard}
             onClose={onClose}
             open={open}
             overflow={overflow}
             role={role}
             size={size}
+            ref={ref}
         >
             {Header && <Header />}
             {Body && <Body />}
@@ -44,10 +46,11 @@ const CommonDialog = (props) => {
 CommonDialog.defaultProps = {
     backdrop: '',
     Body: null,
+    ref: null,
     Footer: null,
     full: false,
     Header: null,
-    keyoard: false,
+    keyboard: false,
     onClose: () => {},
     open: false,
     overflow: false,
@@ -58,10 +61,11 @@ CommonDialog.defaultProps = {
 CommonDialog.propTypes = {
     backdrop: string || bool,
     Body: elementType,
+    ref: func,
     Footer: elementType,
     full: bool,
     Header: elementType,
-    keyoard: bool,
+    keyboard: bool,
     onClose: func,
     open: bool,
     overflow: bool,

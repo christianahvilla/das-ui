@@ -16,10 +16,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CommonDialog = function CommonDialog(props) {
   var backdrop = props.backdrop,
       Body = props.Body,
+      ref = props.ref,
       Footer = props.Footer,
       full = props.full,
       Header = props.Header,
-      keyoard = props.keyoard,
+      keyboard = props.keyboard,
       onClose = props.onClose,
       open = props.open,
       overflow = props.overflow,
@@ -31,22 +32,24 @@ var CommonDialog = function CommonDialog(props) {
     Footer: Footer,
     full: full,
     Header: Header,
-    keyoard: keyoard,
+    keyboard: keyboard,
     onClose: onClose,
     open: open,
     overflow: overflow,
     role: role,
-    size: size
+    size: size,
+    ref: ref
   }, Header && /*#__PURE__*/_react.default.createElement(Header, null), Body && /*#__PURE__*/_react.default.createElement(Body, null), Footer && /*#__PURE__*/_react.default.createElement(Footer, null));
 };
 
 CommonDialog.defaultProps = {
   backdrop: '',
   Body: null,
+  ref: null,
   Footer: null,
   full: false,
   Header: null,
-  keyoard: false,
+  keyboard: false,
   onClose: function onClose() {},
   open: false,
   overflow: false,
@@ -56,10 +59,11 @@ CommonDialog.defaultProps = {
 CommonDialog.propTypes = {
   backdrop: _propTypes.string || _propTypes.bool,
   Body: _propTypes.elementType,
+  ref: _propTypes.func,
   Footer: _propTypes.elementType,
   full: _propTypes.bool,
   Header: _propTypes.elementType,
-  keyoard: _propTypes.bool,
+  keyboard: _propTypes.bool,
   onClose: _propTypes.func,
   open: _propTypes.bool,
   overflow: _propTypes.bool,

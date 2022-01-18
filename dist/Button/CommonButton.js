@@ -15,6 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CommonButton = function CommonButton(props) {
   var appearance = props.appearance,
+      className = props.className,
       color = props.color,
       disabled = props.disabled,
       key = props.key,
@@ -22,6 +23,7 @@ var CommonButton = function CommonButton(props) {
       onClick = props.onClick,
       text = props.text;
   return /*#__PURE__*/_react.default.createElement(_Button.default, {
+    className: className,
     key: key,
     loading: loading,
     disabled: disabled,
@@ -33,6 +35,7 @@ var CommonButton = function CommonButton(props) {
 
 CommonButton.defaultProps = {
   appearance: 'default',
+  className: '',
   color: 'red',
   disabled: false,
   key: '',
@@ -42,6 +45,7 @@ CommonButton.defaultProps = {
 };
 CommonButton.propTypes = {
   appearance: _propTypes.string,
+  className: _propTypes.string,
   color: _propTypes.string,
   disabled: _propTypes.bool,
   key: _propTypes.string,

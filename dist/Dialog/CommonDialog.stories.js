@@ -78,7 +78,7 @@ var Wrapper = function Wrapper() {
     Footer: Footer,
     full: (0, _addonKnobs.boolean)('Full', false),
     Header: Header,
-    keyoard: (0, _addonKnobs.boolean)('Keyboard', false),
+    keyboard: (0, _addonKnobs.boolean)('Keyboard', false),
     onClose: handleOpen,
     open: open,
     overflow: (0, _addonKnobs.boolean)('Overflow', false),
