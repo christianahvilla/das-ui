@@ -52,6 +52,7 @@ var Wrapper = function Wrapper() {
     appearance: (0, _addonKnobs.select)('Appearance', _types.TYPE_COMPONENTS, _types.TYPE_COMPONENTS[0]),
     format: (0, _addonKnobs.select)('Format', _types.FORMAT_DATES, _types.FORMAT_DATES[3]),
     block: (0, _addonKnobs.boolean)('Block', false),
+    defaultValue: (0, _addonKnobs.text)('Default Value', new Date()),
     disabled: (0, _addonKnobs.boolean)('Disabled', false),
     disabledDate: getDisabledDate,
     onSelect: handleChangeValue,
@@ -63,8 +64,9 @@ var Wrapper = function Wrapper() {
     plaintext: (0, _addonKnobs.boolean)('Plaintext', false),
     ranges: _types.FORMAT_RANGES,
     readOnly: (0, _addonKnobs.boolean)('Read Only', false),
-    size: (0, _addonKnobs.select)('Size', _types.COMPONENTS_SIZES, _types.COMPONENTS_SIZES[0])
-  }));
+    size: (0, _addonKnobs.select)('Size', _types.COMPONENTS_SIZES, _types.COMPONENTS_SIZES[0]),
+    value: (0, _addonKnobs.text)('Value', new Date())
+  }), /*#__PURE__*/_react.default.createElement(_CommonDatePicker.default, null));
 };
 
 (0, _react2.storiesOf)('DatePicker', module).add('DatePicker', function () {

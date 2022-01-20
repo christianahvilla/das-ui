@@ -9,6 +9,7 @@ const CommonTextField = (props) => {
         appearance,
         format,
         block,
+        defaultValue,
         disabled,
         disabledDate,
         onSelect,
@@ -21,13 +22,16 @@ const CommonTextField = (props) => {
         ranges,
         readOnly,
         size,
+        value,
     } = props;
 
     return (
         <DatePicker
+            id="id"
             appearance={appearance}
             format={format}
             block={block}
+            defaultValue={defaultValue}
             disabled={disabled}
             disabledDate={disabledDate}
             onSelect={onSelect}
@@ -40,6 +44,7 @@ const CommonTextField = (props) => {
             ranges={ranges}
             readOnly={readOnly}
             size={size}
+            value={value}
         />
     );
 };
@@ -48,6 +53,7 @@ CommonTextField.defaultProps = {
     appearance: 'default',
     format: 'yyyy-MM-dd HH:mm',
     block: false,
+    defaultValue: '',
     disabled: false,
     disabledDate: () => {},
     onSelect: () => {},
@@ -60,12 +66,14 @@ CommonTextField.defaultProps = {
     ranges: [],
     readOnly: false,
     size: 'md',
+    value: '',
 };
 
 CommonTextField.propTypes = {
     appearance: string,
     format: string,
     block: bool,
+    defaultValue: string,
     disabled: bool,
     disabledDate: func,
     onSelect: func,
@@ -78,6 +86,7 @@ CommonTextField.propTypes = {
     ranges: arrayOf(shape({})),
     readOnly: bool,
     size: string,
+    value: string,
 };
 
 export default CommonTextField;

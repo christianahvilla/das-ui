@@ -32,6 +32,7 @@ const Wrapper = () => {
                 appearance={select('Appearance', TYPE_COMPONENTS, TYPE_COMPONENTS[0])}
                 format={select('Format', FORMAT_DATES, FORMAT_DATES[3])}
                 block={boolean('Block', false)}
+                defaultValue={text('Default Value', new Date())}
                 disabled={boolean('Disabled', false)}
                 disabledDate={getDisabledDate}
                 onSelect={handleChangeValue}
@@ -44,6 +45,7 @@ const Wrapper = () => {
                 ranges={FORMAT_RANGES}
                 readOnly={boolean('Read Only', false)}
                 size={select('Size', COMPONENTS_SIZES, COMPONENTS_SIZES[0])}
+                value={text('Value', new Date())}
             />
         </CustomProvider>
     );

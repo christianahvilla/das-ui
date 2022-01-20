@@ -72,6 +72,7 @@ export const FORMAT_DATES = [
     'yyyy-MM-dd HH:mm',
     'yyyy-MM-dd',
     'yyyy-MM',
+    'dd-MM-yyyy',
     'dd MMM yyyy hh:mm:ss aa',
     'dd MMM yyyy hh:mm',
     'hh:mm:ss aa',
