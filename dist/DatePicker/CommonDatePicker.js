@@ -32,6 +32,7 @@ var CommonTextField = function CommonTextField(props) {
       size = props.size,
       value = props.value;
   return /*#__PURE__*/_react.default.createElement(_rsuite.DatePicker, {
+    id: "id",
     appearance: appearance,
     format: format,
     block: block,

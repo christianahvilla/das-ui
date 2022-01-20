@@ -66,7 +66,7 @@ var Wrapper = function Wrapper() {
     readOnly: (0, _addonKnobs.boolean)('Read Only', false),
     size: (0, _addonKnobs.select)('Size', _types.COMPONENTS_SIZES, _types.COMPONENTS_SIZES[0]),
     value: (0, _addonKnobs.text)('Value', new Date())
-  }), /*#__PURE__*/_react.default.createElement(_CommonDatePicker.default, null));
+  }));
 };
 
 (0, _react2.storiesOf)('DatePicker', module).add('DatePicker', function () {
