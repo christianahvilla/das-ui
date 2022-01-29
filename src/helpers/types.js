@@ -65,6 +65,12 @@ export const TYPE_COMPONENTS = [
     'ghost',
 ];
 
+export const TYPE_TAGS = [
+    'text',
+    'closable',
+    'link',
+];
+
 export const FORMAT_DATES = [
     'yyyy-MM',
     'HH:mm',
