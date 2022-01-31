@@ -9,7 +9,7 @@ describe('CommonTag', () => {
 
     it('should render a dialog', () => {
         const component = render(<CommonTag />);
-        const dialog = component.baseElement.querySelector('tag');
-        expect(dialog).toBeDefined();
+        const tag = component.baseElement.querySelector('tag');
+        expect(tag).toBeDefined();
     });
 });
